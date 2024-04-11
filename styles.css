@@ -1,0 +1,48 @@
+/* GLOBAL STYLES */
+body {
+    background: #000;
+    padding-top: 5em;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.container {
+    width: 75%;
+    position: relative;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter h1 {
+    color: cyan; /* Cyan text color */
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5); /* Soft darker cyan shadow */
+}
+
+#revealButton {
+    border: 2px solid;
+    border-color: cyan; /* Cyan border color */
+    background-color: transparent; /* Transparent background */
+    color: cyan; /* Cyan text color */
+    border: 1 cyan;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 33%; /* Position at the bottom third of the page */
+    left: 50%;
+    transform: translate(-50%, 50%); /* Center the button vertically */
+}
+
+#revealButton:hover {
+    background-color: cyan; /* Cyan background color on hover */
+    color: #000; /* Black text color on hover */
+}

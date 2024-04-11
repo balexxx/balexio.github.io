@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles.css">
+    <script src="script.js" defer></script>
     <title>BALEX</title>
-    <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
     <div class="container">
-        <img src="balex_logo.jpg" alt="balex logo" class="image">
+        <div class="typewriter">
+            <h1 class="initial-text" id="text1"></h1>
+            <h1 class="initial-text" id="text2"></h1>
+            <h1 class="initial-text" id="text3"></h1>
+            <h1 class="initial-text" id="text4"></h1>
+            <h1 class="initial-text" id="text5"></h1>
+            <h1 class="initial-text" id="text6"></h1>
+            <h1 id="newText" class="new-text" style="display: none;"></h1>
+        </div>
+    </div>
+    <div>
+        <button id="revealButton" onclick="revealNewText()">Click to Proceed</button>
     </div>
 </body>
 </html>
