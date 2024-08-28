@@ -40,7 +40,8 @@
             width: 80%;
             height: auto;
             opacity: 0;
-            transition:  2s ease-in-out;
+            transform: scale(0.5); /* Initial scaling to half size */
+            transition: opacity 2s ease-in-out, transform 2s ease-in-out; /* Transition for both opacity and scaling */
         }
 
         /* Responsive adjustments */
@@ -64,9 +65,11 @@
     </div>
 
     <script>
-        // Fade in the logo on page load
+        // Fade in the logo and scale it up on page load
         window.addEventListener('load', function() {
-            document.getElementById('logo').style.opacity = '1';
+            var logo = document.getElementById('logo');
+            logo.style.opacity = '1';
+            logo.style.transform = 'scale(1)'; /* Scale to original size */
         });
 
         // Ensure video plays on mobile devices
