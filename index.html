@@ -3,24 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles.css">
-    <script src="script.js" defer></script>
-    <title>BALEX</title>
+    <title>Minimalist Landing Page</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Full-screen video background */
+        #video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        /* Container for centered content */
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        /* Styled image overlay */
+        .logo {
+            max-width: 300px;
+            width: 80%;
+            height: auto;
+            opacity: 0;
+            transition:  2s ease-in-out;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 4000px) {
+            .logo {
+                max-width: 4000px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="typewriter">
-            <h1 class="initial-text" id="text1"></h1>
-            <h1 class="initial-text" id="text2"></h1>
-            <h1 class="initial-text" id="text3"></h1>
-            <h1 class="initial-text" id="text4"></h1>
-            <h1 class="initial-text" id="text5"></h1>
-            <h1 class="initial-text" id="text6"></h1>
-            <h1 id="newText" class="new-text" style="display: none;"></h1>
-        </div>
+    <!-- Video background -->
+    <video id="video-background" autoplay loop muted playsinline>
+        <source src="./content/nose_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Centered content -->
+    <div class="content">
+        <img src="./content/Balex_waveallwhite02.png" alt="Logo" class="logo" id="logo">
     </div>
-    <div>
-        <button id="revealButton" onclick="revealNewText()">Click to Proceed</button>
-    </div>
+
+    <script>
+        // Fade in the logo on page load
+        window.addEventListener('load', function() {
+            document.getElementById('logo').style.opacity = '1';
+        });
+
+        // Ensure video plays on mobile devices
+        document.getElementById('video-background').play();
+    </script>
 </body>
 </html>
