@@ -4,76 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BALEX</title>
-    <style>
-        /* Reset default styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Full-screen video background */
-        #video-background {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1;
-            object-fit: cover;
-        }
-
-        /* Container for centered content */
-        .content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-
-        /* Styled image overlay */
-        .logo {
-            max-width: 300px;
-            width: 80%;
-            height: auto;
-            opacity: 0;
-            transform: scale(0.5); /* Initial scaling to half size */
-            transition: opacity 2s ease-in-out, transform 2s ease-in-out; /* Transition for both opacity and scaling */
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 4000px) {
-            .logo {
-                max-width: 4000px;
-            }
-        }
-    </style>
+    <!-- Added Ionicons library -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Video background -->
-    <video id="video-background" autoplay loop muted playsinline>
-        <source src="./content/nose_video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <!-- Centered content -->
-    <div class="content">
-        <img src="./content/Balex_waveallwhite02.png" alt="Logo" class="logo" id="logo">
-    </div>
-
-    <script>
-        // Fade in the logo and scale it up on page load
-        window.addEventListener('load', function() {
-            var logo = document.getElementById('logo');
-            logo.style.opacity = '1';
-            logo.style.transform = 'scale(1)'; /* Scale to original size */
-        });
-
-        // Ensure video plays on mobile devices
-        document.getElementById('video-background').play();
-    </script>
+    <header>
+        <!-- Removed logo image -->
+        <!-- <a href="index.html">
+             <img id="logo" src="Content/logo.png" alt="Logo" style="margin-bottom:5px; padding:10px;">
+             </a> -->
+    </header>
+    <section class="tabs">
+        <ul>
+            <li>
+                <button class="collapsible">About Me</button>
+                <div class="collapsible-content">
+                    <p>I’m Birk Alexandersson—aka BALEX. I design with the future in mind, using VR, AI, and digital tools to shape new realities. My work spans VFX, product design, fashion, and blockchain, always pushing boundaries. I founded the world’s first digital footwear brand and continue to explore what’s next.
+                        <br><br>
+                        Let’s create the future.</p>
+                </div>
+            </li>
+            <li>
+                <button class="collapsible">Contact</button>
+                <div class="collapsible-content">
+                    <p>
+                        <ion-icon name="mail-outline"></ion-icon> <span>balex.digital@gmail.com</span><br>
+                        <ion-icon name="call-outline"></ion-icon> <span>+47 973 08 204</span><br>
+                        <a href="https://www.instagram.com/balex.io/?hl=en" target="_blank" style="text-decoration:none; color: white;">
+                            <ion-icon name="logo-instagram"></ion-icon> Instagram
+                        </a><br>
+                        <a href="https://www.linkedin.com/in/birk-alexandersson-a4068418a/" target="_blank" style="text-decoration:none; color: white;">
+                            <ion-icon name="logo-linkedin"></ion-icon> LinkedIn
+                        </a>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <button class="collapsible">Viritual Shoes</button>
+                <div class="collapsible-content" id="viritual-shoes-text">
+                    <div class="collection-container" style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+                        <div class="video-container" style="width: 100%; text-align: center;">
+                            <video autoplay muted loop playsinline style="width: 100%; max-width: 660px;">
+                                <source src="Content/WebM/SPLASH.webm" type="video/webm">
+                            </video>
+                        </div>
+                        <div class="text-container" style="width: 100%; text-align: center;">
+                            <p>
+                                During the NFT boom, I explored the possibilities of digital footwear, designing and selling a collection of virtual shoes. The result? A wide-ranging study of aesthetics, materials, and form—pushing the boundaries of design beyond physical limits.
+                            </p>
+                            <p style="font-size: 20px; margin: 20px 0;">
+                                Discover the Collection&nbsp;
+                                <button class="discover-btn" onclick="window.location.href='ShoeCollection.html'">here</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <button class="collapsible">AI Work</button>
+                <div class="collapsible-content" id="ai-work-text" style="text-align: center;">
+                    <p>[Your AI work details go here. Add content as needed.]</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <script src="main.js"></script>
 </body>
 </html>
